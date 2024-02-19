@@ -1,0 +1,20 @@
+.phanisir-img{
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+}
+.founder-details{
+    color: #ffffff;
+    font-size: 15px;
+}
+.phanisir-name{
+    font-size: 20px;
+    color: #ffffff;
+}
+.founder-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
