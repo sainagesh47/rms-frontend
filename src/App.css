@@ -1,0 +1,29 @@
+.App {
+  /* background: linear-gradient(to right, rgb(147, 147, 230), #cf3636); */
+  background-image: url('https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg?auto=format&fit=crop&w=315&h=220');
+  height: 100vh;
+  overflow-y: auto;
+  background-size: cover;
+ 
+}
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+
+
+
+
+
+.logo-aja{
+  width: 180px;
+  height: 160px;
+}

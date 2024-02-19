@@ -1,0 +1,75 @@
+.img{
+    width: 150px;
+    height: 100px;
+    
+  }
+  .carousel-heading{
+    color: #ffffff;
+    font-size: 25px;
+    text-decoration: underline;
+  }
+  .navdiv{
+    width: 100%;
+  }
+.carousel-div{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh
+  }
+.para-carsl{
+  font-size: 15px;
+  color: #ffffff;
+}
+.main-heading{
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 500;
+
+  
+}
+.login-btn{
+    background-color:rgb(237, 14, 14);
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+    border-width: 0px;
+    color: #ffffff;
+    font-size: 15px;
+    &:hover {
+        background-color: transparent;
+        border-width: 2px;
+        border: 2px solid #ffffff;
+
+
+      }
+}
+
+.register-btn{
+    background-color: rgb(62, 60, 215);
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+    border-width: 0px;
+    color: #ffffff;
+    font-size: 15px;
+    &:hover {
+      background-color: transparent;
+      border-width: 2px;
+      border: 2px solid #ffffff;
+
+      }
+}
+
+.carousel-img{
+  width: 200px;
+  height: 200px;
+}
+.silde3{
+  border-radius: 50%;
+  width: 150px;
+  height: 260px;
+
+}
