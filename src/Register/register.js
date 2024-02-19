@@ -10,7 +10,7 @@ function Register(){
         userName:"",
         password:"",
         dateOfJoining:"",
-        noOfDaysInCompany:null,
+        noOfDaysInCurrentCompany:null,
         designation:"",
         reportingManager:"",
         previousClient:"",
@@ -24,29 +24,71 @@ function Register(){
     })
 
  
-    const postData = async () => {
-     console.log(userinfo)
-        // try {
-        //     const response = await fetch('http://localhost:8080/saveEmployee', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(userinfo),
-        //     });
+    // const postData = async () => {
+        
+     
+    //     try {
+    //         const response = await fetch('http://localhost:8080/saveEmployee', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(userinfo),
+    //         });
          
-        //     if (response.ok) {
+    //         if (response.ok) {
                 
                 
-        //         const data = await response.json();
-        //         console.log(data);
-        //     } else {
-        //         console.error('Error:', response.status, response.statusText);
-        //     }
-        // } finally{
+    //             const data = await response.json();
+    //             console.log(data);
+    //         } else {
+    //             console.error('Error:', response.status, response.statusText);
+    //         }
+    //     } finally{
             
-        // }
+    //     }
+    // };
+
+    const postData = async () => {
+        const kinfo = {
+            "name": userinfo.name,
+            "userName": userinfo.userName,
+            "password": userinfo.password,
+            "dateOfJoining": userinfo.dateOfJoining,
+            "noOfDaysInCurrentCompany": userinfo.noOfDaysInCurrentCompany,
+            "designation": userinfo.designation,
+            "reportingManager": userinfo.reportingManager,
+            "previousClient": userinfo.previousClient,
+            "noOfDaysInBench": userinfo.noOfDaysInBench,
+            "technology": userinfo.technology,
+            "phoneNumber": userinfo.phoneNumber,
+            "emailId": userinfo.emailId,
+            "currentAddress": userinfo.currentAddress,
+            "permanentAddress": userinfo.permanentAddress,
+            "laptopStatus": userinfo.laptopStatus
+          }
+          
+        try {
+            const response = await fetch('http://localhost:8080/saveEmployee', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(kinfo),
+            });
+            console.log(response.data)
+    
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+            } else {
+                console.error('Error:', response.status, response.statusText);
+            }
+        } catch (error) {
+            console.error('Fetch error:', error);
+        }
     };
+    
 
        
 
@@ -80,37 +122,12 @@ function Register(){
                     <input type='password' id="password"  name="password" className="input-ele" onChange={handleChange} value={userinfo.password}/>
                     <label htmlFor="dateofjoin">Date of Join</label>
                     <input type='date' id="dateofjoin"  name="dateOfJoining" className="input-ele" onChange={handleChange} value={userinfo.dateOfJoining}/>
-                    <label htmlFor="previousClient">Previous Client</label>
-                    <input type='text' id="previousClient"  name="previousClient" className="input-ele" onChange={handleChange} value={userinfo.previousClient} />
-                </div>
-                <div className="second-form">
-                 <label htmlFor="noOfDaysInBench">No of Days in Bench</label>
-                <input type='text' id="noOfDaysInBench"  name="noOfDaysInBench" className="input-ele" onChange={handleChange} value={userinfo.noOfDaysInBench} />
-                <label htmlFor="technology">Technology</label>
-                <select name="technology" id="technology"  className="input-ele"  onChange={(e) => {
-                                                    setuserinfo((prevUserInfo) => ({
-                                                    ...prevUserInfo,
-                                                    qualifications: e.target.value,
-                                                    }));
-                                                }}>
-                       <option ></option>
-                        <option >Java</option>
-                        <option >Python</option>
-                        <option >ReactJS</option>
-                        <option >DevOps</option>
-                        <option >.Net</option>
-                                                
-                    </select>
-                <label htmlFor="phoneNumber">Phone Number</label>
-                <input type='text' id="phoneNumber"  name="phoneNumber" className="input-ele" onChange={handleChange} value={userinfo.phoneNumber} />
-                <label htmlFor="emailId">Email ID</label>
-                <input type='text' id="emailId"  name="emailId" className="input-ele" onChange={handleChange} value={userinfo.emailId} />
-                <label htmlFor="noofDaysinCompany">No of Days in Company</label>
-                <input type='text' id="noofDaysinCompany"  name="noOfDaysInCompany" onChange={handleChange} className="input-ele" value={userinfo.noOfDaysInCompany}/>
+                    <label htmlFor="noofDaysinCurrentCompany">No of Days in Company</label>
+                <input type='text' id="noofDaysinCurrentCompany"  name="noOfDaysInCurrentCompany" onChange={handleChange} className="input-ele" value={userinfo.noOfDaysInCurrentCompany}/>
                    
-                </div>
-                <div className="third-form">
-                   <label htmlFor="designation">Designation</label>
+                   </div>
+                <div className="second-form">
+                <label htmlFor="designation">Designation</label>
                    <select name="designation" id="designation"  className="input-ele"  onChange={(e) => {
                                                     setuserinfo((prevUserInfo) => ({
                                                     ...prevUserInfo,
@@ -128,7 +145,39 @@ function Register(){
                     </select>
                     <label htmlFor="reportingManager">Reporting Manager</label>
                     <input type='text' id="reportingManager"  name="reportingManager" className="input-ele" onChange={handleChange} value={userinfo.reportingManager}/>
-                    <label htmlFor="currentAddress">Current Address</label>
+                 
+                    
+                <label htmlFor="previousClient">Previous Client</label>
+                    <input type='text' id="previousClient"  name="previousClient" className="input-ele" onChange={handleChange} value={userinfo.previousClient} />
+               
+                 <label htmlFor="noOfDaysInBench">No of Days in Bench</label>
+                 <input type='text' id="noOfDaysInBench"  name="noOfDaysInBench" className="input-ele" onChange={handleChange} value={userinfo.noOfDaysInBench} />
+                <label htmlFor="technology">Technology</label>
+                <select name="technology" id="technology"  className="input-ele"  onChange={(e) => {
+                                                    setuserinfo((prevUserInfo) => ({
+                                                    ...prevUserInfo,
+                                                    qualifications: e.target.value,
+                                                    }));
+                                                }}>
+                       <option ></option>
+                        <option >Java</option>
+                        <option >Python</option>
+                        <option >ReactJS</option>
+                        <option >DevOps</option>
+                        <option >.Net</option>
+                                                
+                    </select>
+               
+                
+                </div>
+                <div className="third-form">
+                 <label htmlFor="phoneNumber">Phone Number</label>
+                <input type='text' id="phoneNumber"  name="phoneNumber" className="input-ele" onChange={handleChange} value={userinfo.phoneNumber} />
+                <label htmlFor="emailId">Email ID</label>
+                <input type='text' id="emailId"  name="emailId" className="input-ele" onChange={handleChange} value={userinfo.emailId} />
+                
+                   
+                     <label htmlFor="currentAddress">Current Address</label>
                     <input type='text' id="currentAddress"  name="currentAddress" className="input-ele" onChange={handleChange} value={userinfo.currentAddress} />
                     <label htmlFor="permanentAddress">Permanent Address</label>
                     <input type='text' id="permanentAddress"  name="permanentAddress" className="input-ele" onChange={handleChange} value={userinfo.permanentAddress} />

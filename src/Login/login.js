@@ -48,7 +48,7 @@ function Login(){
             <form className="form-div"> 
                 <div>
                     <label htmlFor="username">Username</label>
-                    <input type='email' id="username"  name="userName" className="input-ele" onChange={handleChange} value={logininfo.userName}/>
+                    <input type='email' id="username"  name="username" className="input-ele" onChange={handleChange} value={logininfo.username}/>
                     <label htmlFor="password">Password</label>
                     <input type='password' id="password"  name="password" className="input-ele" onChange={handleChange} value={logininfo.password}/>
                     <Link to="/forget-password">
