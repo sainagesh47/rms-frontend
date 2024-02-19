@@ -1,0 +1,35 @@
+.contactus-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; 
+    align-items: center;
+    
+}
+.main-heading-contact{
+    font-size: 30px;
+    color:#ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+    
+}
+.locname{
+    width: 40px;
+    height: 40px;
+    
+}
+.copyrights-contact{
+    font-size: 13px;
+    color: aliceblue;
+}
+.contact-loc{
+    color: rgb(234, 246, 245);
+    font-size: 30px;
+}
+.para-contact{
+    font-size: 15px;
+    color: aliceblue;
+}
+.startup{
+    text-decoration: underline;
+}

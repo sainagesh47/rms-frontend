@@ -1,0 +1,29 @@
+.clientlogo{
+    width: 120px;
+    height: 80px;
+    margin: 20px;
+}
+.client-main-heading{
+    text-align: center;
+    color: #ffffff;
+    font-size: 40px;
+    
+    
+}
+.client-para{
+    color: #ffffff;
+    font-size: 15px;
+}
+.client-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.client-logo{
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
